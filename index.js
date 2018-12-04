@@ -12,7 +12,7 @@ module.exports = function (filename, opts) {
     args.push('-rtsp_transport');
     args.push(opts.transport);
   }
-  opts.push(filename);
+  args.push(filename);
   
   return exec('ffprobe', args).then(function (out) {
     var stdout = out[0].toString('utf8');
